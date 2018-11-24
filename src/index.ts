@@ -1,6 +1,8 @@
 import { CacheWrapper } from './CacheWrapper';
-import { Logger } from 'winston';
-import { configureLogger, logger } from './logger';
+import { configureLogger, Logger, logger } from './logger';
+
+export { CacheWrapper } from './CacheWrapper';
+export { LocalCache } from './LocalCache';
 
 /** Optional configuration for middleware */
 export interface CacheConfiguration {
@@ -18,4 +20,5 @@ export function configure (cacheType?: CacheWrapper, conf?: CacheConfiguration) 
     if (cacheType) cache = cacheType;
 }
 
-export let cache: CacheWrapper = new CacheWrapper();
+export let cache = new CacheWrapper();
+export { logger } from './logger';

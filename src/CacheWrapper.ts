@@ -1,8 +1,5 @@
 export class CacheWrapper {
 
-    constructor() {
-    }
-
     public async getKey(namespace: string, key: string): Promise<string> {
         return;
     }
@@ -11,19 +8,19 @@ export class CacheWrapper {
         return;
     }
 
-    public async saveKey(namespace: string, key: string, value: any, options: any = {}): Promise<any> {
+    public async saveKey(namespace: string, key: string, value: any, options: any = {}): Promise<boolean> {
         return;
     }
 
-    public async deleteKey(namespace: string, key: string) {
+    public async deleteKey(namespace: string, key: string): Promise<boolean> {
         return;
     }
 
-    public async getNamespace(namespace: string) {
+    public async getNamespace(namespace: string): Promise<any> {
         return;
     }
 
-    public async deleteNamespace(namespace: string) {
+    public async deleteNamespace(namespace: string): Promise<any> {
         return;
     }
 }

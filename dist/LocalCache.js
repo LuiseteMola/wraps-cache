@@ -35,7 +35,7 @@ class LocalCache {
         return __awaiter(this, void 0, void 0, function* () {
             if (this.data[namespace])
                 delete this.data[namespace][key];
-            return;
+            return true;
         });
     }
     getNamespace(namespace) {

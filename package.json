@@ -1,16 +1,31 @@
 {
-  "name": "wrap-cache",
-  "version": "1.0.0",
+  "name": "wraps-cache",
+  "version": "0.0.1",
   "description": "Cache wrapper for nodejs",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
-  "author": "",
+  "author": "Luis Fernández",
   "license": "MIT",
-  "dependencies": {
-    "@types/node": "^10.12.9",
-    "wraps-logger": "^1.0.3"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuiseteMola/wraps-cache"
   },
-  "devDependencies": {}
+  "dependencies": {
+    "wraps-logger": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.9",
+    "tslint-config-prettier": "^1.16.0"
+  }
 }
